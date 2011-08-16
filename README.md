@@ -7,25 +7,25 @@ FileWatcher PHP class
 
 Usage:
 ------
-- edit FileWatcher.config.php and set email address, password and all paths and filenames
-- create your main script, see example.php. Should be more or less 4 lines like this:
+1 edit FileWatcher.config.php and set email address, password and all paths and filenames
+2 create your main script, see example.php. Should be more or less 4 lines like this:
 
-> <?php
->
-> require_once 'FileWatcher.php';
-> $fileWatcher = new FileWatcher();
->
-> $fileWatcher->readConfig('FileWatcher.config.php')
->             ->checkNow();
+    <?php
 
-- upload everything important to your website (you don't need README and ToDo).
-- run this script on the server regularly (password and overallHash are optional):
+    require_once 'FileWatcher.php';
+    $fileWatcher = new FileWatcher();
 
-> http://www.domain.de/example.php
+    $fileWatcher->readConfig('FileWatcher.config.php')
+                ->checkNow();
+
+3 upload everything important to your website (you don't need README and ToDo).
+4 run this script on the server regularly (password and overallHash are optional):
+
+    http://www.domain.de/example.php
 
 or from CLI:
 
-> php example.php
+    php example.php
 
 - make sure 2 files have been created on the first run: FileWatcher.log and FileWatcher.MasterHashes.txt
 
