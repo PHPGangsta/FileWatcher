@@ -92,7 +92,7 @@ class FileWatcher
         $intersectKeys = array_keys(array_intersect_key($masterHashes, $currentHashes));
         foreach ($intersectKeys as $intersectKey) {
             if ($masterHashes[$intersectKey] != $currentHashes[$intersectKey]) {
-                $changedFiles[] = $masterHashes[$intersectKey];
+                $changedFiles[$intersectKey] = $masterHashes[$intersectKey];
             }
         }
 
